@@ -2,10 +2,15 @@ const express = require('express')
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send(<input placeholder= 'Enter a number'></input>)
-    res.send(<input placeholder= 'Enter a number'></input>)
+    res.send('Calculator')
+})
+app.get('/add/:numb1/:numb2', (req, res) => {
+    var n1 = parseFloat(req.params.numb1);
+    var n2 = parseFloat(req.params.numb2);
+    let sum = n1 + n2
+    res.send(`Total of ${n1} & ${n2} is ${sum}`)
 })
 
-app.listen(3000 () => {
+app.listen(3002, () => {
     console.log('listening on port 3000');
 })
