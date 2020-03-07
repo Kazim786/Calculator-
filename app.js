@@ -30,8 +30,8 @@ app.post('/', (req, res) => {
 app.post('/bmicalculator', (req, res) => {
     let n1 = Number(req.body.weight);
     let n2 = Number(req.body.height);
-    result = n1 + n2 
-    res.send(`Your BMI is ${result}`)
+    let bmi = n1 / (n2 * n2);
+    res.send(`Your BMI is ${bmi}`)
 
 })
 
